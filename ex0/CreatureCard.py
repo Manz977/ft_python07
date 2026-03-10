@@ -1,15 +1,14 @@
-from ex0.Card import Card
-
+from ex0.Card import Card, Rarity
 
 class CreatureCard(Card):
-    def __init__(self, name: str, cost: int, rarity: str, card_type: str,
+    def __init__(self, name: str, cost: int, rarity: Rarity, card_type: str,
                  attack: int, health: int):
         super().__init__(name, cost, rarity, card_type)
         if attack <= 0 or health <= 0:
             raise ValueError("Attack and Health must be a positive number")
         self.attack = attack
         self.health = health
-
+        
     def play(self, game_state: dict) -> dict:
         return {
             "card_played": self.name,

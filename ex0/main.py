@@ -1,3 +1,6 @@
+from ex0.Card import Rarity
+
+
 try:
     from ex0.CreatureCard import CreatureCard
 except ImportError as e:
@@ -13,7 +16,7 @@ def main() -> None:
     print("CreatureCard Info:")
 
     try:
-        card = CreatureCard("Fire Dragon", 5, "Legendary",
+        card = CreatureCard("Fire Dragon", 5, Rarity.LEGENDARY,
                             "Creature", 7, 5)
         print(card.get_card_info())
     except ValueError as e:

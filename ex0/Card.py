@@ -1,10 +1,12 @@
 from abc import ABC, abstractmethod
 from enum import Enum
 
+
 class Rarity(Enum):
     COMMON = "Common"
     RARE = "Rare"
     LEGENDARY = "Legendar"
+
 
 class Card(ABC):
     def __init__(self, name: str, cost: int, rarity: Rarity, card_type: str):

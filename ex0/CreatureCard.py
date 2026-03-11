@@ -1,5 +1,6 @@
 from ex0.Card import Card, Rarity
 
+
 class CreatureCard(Card):
     def __init__(self, name: str, cost: int, rarity: Rarity, card_type: str,
                  attack: int, health: int):
@@ -8,7 +9,7 @@ class CreatureCard(Card):
             raise ValueError("Attack and Health must be a positive number")
         self.attack = attack
         self.health = health
-        
+
     def play(self, game_state: dict) -> dict:
         return {
             "card_played": self.name,
